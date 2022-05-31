@@ -1,0 +1,8 @@
+package aplicacao;
+
+public class Tela {
+	public static void imprimeTabuleiro() {
+		
+	}
+	
+}

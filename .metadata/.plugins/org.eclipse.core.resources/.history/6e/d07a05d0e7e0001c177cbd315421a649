@@ -1,0 +1,11 @@
+package xadrez;
+
+public class PartidaXadrez {
+	private Tabuleiro tab;
+	
+	public ParticaXadrez() {
+		tab = new Tabuleiro(8, 8);
+	}
+	
+	
+}
