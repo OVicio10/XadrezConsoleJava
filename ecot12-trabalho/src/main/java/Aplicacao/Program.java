@@ -8,5 +8,4 @@ public class Program {
 		PartidaXadrez px = new PartidaXadrez();
 		Tela.imprimeTabuleiro(px.getPecas());
 	}
-
 }

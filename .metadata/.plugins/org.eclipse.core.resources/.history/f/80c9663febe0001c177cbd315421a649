@@ -1,0 +1,7 @@
+package xadrez.pecas;
+
+public class Peao extends PecaXadrez{
+	public Peao(Tabuleiro tab, Cor cor) {
+		super(tab, cor);
+	}
+}
