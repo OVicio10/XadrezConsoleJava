@@ -1,0 +1,9 @@
+package xadrez;
+
+public class PosicaoXadrez {
+
+	public PosicaoXadrez() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

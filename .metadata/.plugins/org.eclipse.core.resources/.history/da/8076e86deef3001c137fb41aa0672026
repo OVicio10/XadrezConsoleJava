@@ -37,7 +37,7 @@ public class Tabuleiro {
 	}
 	public void posicaoPeca(Peca peca, Posicao pos) {
 		if(existePeca(pos)) {
-			throw new TabuleiroException("Posicao ocupado por outra peca " + pos);
+			throw new TabuleiroException("Posicao ocupado por outra peca");
 		}
 		pecas[pos.getLinha()][pos.getColuna()] = peca;
 		peca.posicao = pos;
