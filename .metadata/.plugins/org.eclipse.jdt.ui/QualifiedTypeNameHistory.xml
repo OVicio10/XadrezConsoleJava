@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="xadrez.PartidaXadrez"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="xadrez.Cor"/>
+    <fullyQualifiedTypeName name="tabuleiro.Posicao"/>
+</qualifiedTypeNameHistroy>
