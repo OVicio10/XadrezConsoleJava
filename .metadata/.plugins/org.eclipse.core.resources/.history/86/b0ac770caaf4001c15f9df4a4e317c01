@@ -24,28 +24,14 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
-	public boolean[][] movimentosPossiveis(PosicaoXadrez posicaoOrigem){
-		Posicao pos = posicaoOrigem.toPosicao();
-		validaPosicaoOrigem(pos);
-		return tab.peca(pos).possiveisMovimentos();
-	}
-	
 	public PecaXadrez executaMovimento(PosicaoXadrez posicaoOrigem, PosicaoXadrez posicaoDestino) {
 		Posicao origem = posicaoOrigem.toPosicao();
 		Posicao destino = posicaoDestino.toPosicao();
 		validaPosicaoOrigem(origem);
-		validaPosicaoDestivo(origem, destino);
 		Peca capturaPeca = fazMovimento(origem, destino);
 		return (PecaXadrez)capturaPeca;
 	}
 	
-	private void validaPosicaoDestivo(Posicao origem, Posicao destino) {
-		if(!tab.peca(origem).possivelMovimento(destino)) {
-			throw new XadrezException("A peca escolhida nao pode mover para a posicao destino");
-		}
-		
-	}
-
 	private Peca fazMovimento(Posicao origem, Posicao destino) {
 		Peca p = tab.removePeca(origem);
 		Peca capturaPeca = tab.removePeca(destino);

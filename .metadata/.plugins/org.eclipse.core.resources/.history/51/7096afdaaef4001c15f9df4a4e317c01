@@ -23,7 +23,7 @@ public class Program {
 			System.out.print("Origem: ");
 			PosicaoXadrez origem = Tela.lerPosicaoXadrez(sc);
 			
-			boolean[][] possiveisMovimentos = px.movimentosPossiveis(origem);
+			boolean[][] possiveisMovimentos = px.possiveisMovimentos(origem);
 			Tela.limpaTela();
 			Tela.imprimeTabuleiro(px.getPecas(), possiveisMovimentos);
 			
