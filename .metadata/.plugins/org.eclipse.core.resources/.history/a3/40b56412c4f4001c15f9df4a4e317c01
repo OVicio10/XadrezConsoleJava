@@ -103,8 +103,8 @@ public class Tela {
 	}
 	
 	private static void imprimePecasCapturadas(List<PecaXadrez> capturadas) {
-		List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO).collect(Collectors.toList());
-		List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO).collect(Collectors.toList());
+		List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO).collect(Collector.toList());
+		List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO).collect(Collector.toList());
 		System.out.println("Captured pieces:");
 		System.out.print("Branco: ");
 		System.out.print(ANSI_BRANCO);

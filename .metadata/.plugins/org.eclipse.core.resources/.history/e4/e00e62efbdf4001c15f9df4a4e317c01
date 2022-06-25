@@ -13,8 +13,8 @@ public class PartidaXadrez {
 	private Cor jogadorAtual;
 	private Tabuleiro tab;
 	
-	private List<Peca> pecasNoTabuleiro = new ArrayList<>();
-	private List<Peca> pecascapturadas = new ArrayList<>();
+	private List<Peca> pecasNoTabuleiro = new ArrayList<Peca>();
+	private List<Peca> pecascapturadas = new ArrayList<Peca>();
 	
 	public PartidaXadrez() {
 		tab = new Tabuleiro(8, 8);

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import xadrez.Cor;
@@ -54,7 +55,7 @@ public class Tela {
 		}
 	}
 	
-	public static void imprimePartida(PartidaXadrez px, List<PecaXadrez> capturadas) {
+	public static void imprimePartida(PartidaXadrez px, List<PartidaXadrez> capturadas) {
 		imprimeTabuleiro(px.getPecas());
 		System.out.println();
 		imprimePecasCapturadas(capturadas);
@@ -102,9 +103,9 @@ public class Tela {
 		System.out.print(" ");
 	}
 	
-	private static void imprimePecasCapturadas(List<PecaXadrez> capturadas) {
-		List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO).collect(Collectors.toList());
-		List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO).collect(Collectors.toList());
+	private static void imprimePecasCapturadas(List<PartidaXadrez> capturadas) {
+		List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO).collect(Collector.toList());
+		List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO).collect(Collector.toList());
 		System.out.println("Captured pieces:");
 		System.out.print("Branco: ");
 		System.out.print(ANSI_BRANCO);

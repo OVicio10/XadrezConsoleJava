@@ -15,7 +15,7 @@ public class Program {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		PartidaXadrez px = new PartidaXadrez();
-		List<PecaXadrez> capturada = new ArrayList<>();
+		List<PartidaXadrez> capturada = new ArrayList<PartidaXadrez>();
 		
 		while(true) {
 			try {

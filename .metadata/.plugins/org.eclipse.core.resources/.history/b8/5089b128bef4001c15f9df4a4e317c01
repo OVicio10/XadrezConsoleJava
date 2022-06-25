@@ -15,12 +15,12 @@ public class Program {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		PartidaXadrez px = new PartidaXadrez();
-		List<PecaXadrez> capturada = new ArrayList<>();
+		List<PartidaXadrez> capturadas = new ArrayList<PartidaXadrez>();
 		
 		while(true) {
 			try {
 			Tela.limpaTela();
-			Tela.imprimePartida(px, capturada);
+			Tela.imprimePartida(px, capturadas);
 			
 			System.out.println();
 			System.out.print("Origem: ");
@@ -37,7 +37,7 @@ public class Program {
 			PecaXadrez pecaCapturada = px.executaMovimento(origem, destino);
 			
 			if(pecaCapturada != null) {
-				capturada.add(pecaCapturada);
+				capturadas.add(pecaCapturada);
 			}
 			
 			}catch(XadrezException e) {
