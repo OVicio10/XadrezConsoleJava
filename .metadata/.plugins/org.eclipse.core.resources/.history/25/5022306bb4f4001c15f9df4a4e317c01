@@ -55,7 +55,7 @@ public class Tela {
 		imprimeTabuleiro(px.getPecas());
 		System.out.println();
 		System.out.println("Turno: " + px.getTurno());
-		System.out.println("Jogador das Pecas: " + px.getJogadorAtual());
+		System.out.println("Jogador: " + px.getJogadorAtual());
 	}
 	
 	public static void imprimeTabuleiro(PecaXadrez[][] pecas) {

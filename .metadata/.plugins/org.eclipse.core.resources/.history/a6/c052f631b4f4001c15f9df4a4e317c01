@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import xadrez.Cor;
-import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
 
@@ -49,13 +48,6 @@ public class Tela {
 		}catch(RuntimeException e) {
 			throw new InputMismatchException("Erro ao ler PosicaoXadrez. Valores validos sao de a1 ate h8.");
 		}
-	}
-	
-	public static void imprimePartida(PartidaXadrez px) {
-		imprimeTabuleiro(px.getPecas());
-		System.out.println();
-		System.out.println("Turno: " + px.getTurno());
-		System.out.println("Jogador das Pecas: " + px.getJogadorAtual());
 	}
 	
 	public static void imprimeTabuleiro(PecaXadrez[][] pecas) {

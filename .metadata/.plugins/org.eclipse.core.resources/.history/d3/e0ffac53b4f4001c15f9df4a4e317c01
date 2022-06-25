@@ -17,7 +17,7 @@ public class Program {
 		while(true) {
 			try {
 			Tela.limpaTela();
-			Tela.imprimePartida(px);
+			Tela.imprimeTabuleiro(px.getPecas());
 			
 			System.out.println();
 			System.out.print("Origem: ");
