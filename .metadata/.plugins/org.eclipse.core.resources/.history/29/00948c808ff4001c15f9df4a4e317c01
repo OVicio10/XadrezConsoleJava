@@ -45,9 +45,9 @@ public class Tela {
 			System.out.print("-");
 		} else {
 			if(peca.getCor() == Cor.BRANCO) {
-				System.out.print(ANSI_BRANCO + peca + ANSI_RESET);
+				System.out.println(ANSI_BRANCO + peca + ANSI_RESET);
 			}else {
-				System.out.print(ANSI_AMARELO + peca + ANSI_RESET);
+				System.out.println(ANSI_AMARELO + peca + ANSI_RESET);
 			}
 		}
 		System.out.print(" ");

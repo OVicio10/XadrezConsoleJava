@@ -2,6 +2,13 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="xadrez.PartidaXadrez"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="xadrez.Cor"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="tabuleiro.TabuleiroException"/>
     <fullyQualifiedTypeName name="tabuleiro.Posicao"/>
+    <fullyQualifiedTypeName name="xadrez.XadrezException"/>
+    <fullyQualifiedTypeName name="tabuleiro.Tabuleiro"/>
+    <fullyQualifiedTypeName name="tabuleiro.Peca"/>
+    <fullyQualifiedTypeName name="xadrez.PosicaoXadrez"/>
+    <fullyQualifiedTypeName name="xadrez.PecaXadrez"/>
+    <fullyQualifiedTypeName name="xadrez.Cor"/>
 </qualifiedTypeNameHistroy>
