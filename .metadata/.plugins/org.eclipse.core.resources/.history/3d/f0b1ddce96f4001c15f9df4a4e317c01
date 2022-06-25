@@ -13,6 +13,8 @@ public class PosicaoXadrez {
 		this.coluna = coluna;
 		this.linha = linha;
 		
+		
+		
 	}
 
 	public char getColuna() {

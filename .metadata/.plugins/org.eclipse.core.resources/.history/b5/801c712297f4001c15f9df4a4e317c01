@@ -16,14 +16,14 @@ public class Program {
 			Tela.imprimeTabuleiro(px.getPecas());
 			
 			System.out.println();
-			System.out.print("Origem: ");
-			PosicaoXadrez origem = Tela.lerPosicaoXadrez(sc);
+			System.out.print("Fonte: ");
+			PosicaoXadrez fonte = Tela.lerPosicaoXadrez(sc);
 			
 			System.out.println();
-			System.out.print("Destino: ");
-			PosicaoXadrez destino = Tela.lerPosicaoXadrez(sc);
+			System.out.print("Alvo: ");
+			PosicaoXadrez alvo = Tela.lerPosicaoXadrez(sc);
 			
-			PecaXadrez capturaPeca = px.executaMovimento(origem, destino);
+			PecaXadrez capturaPeca = px.executaMovimento(fonte, alvo);
 		}
 		
 	}

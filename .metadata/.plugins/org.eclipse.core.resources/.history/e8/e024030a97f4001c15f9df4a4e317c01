@@ -24,11 +24,11 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
-	public PecaXadrez executaMovimento(PosicaoXadrez posicaoOrigem, PosicaoXadrez posicaoDestino) {
-		Posicao origem = posicaoOrigem.toPosicao();
-		Posicao destino = posicaoDestino.toPosicao();
-		validaPosicaoFonte(origem);
-		Peca capturaPeca = fazMovimento(origem, destino);
+	public PecaXadrez executaMovimento(PosicaoXadrez posicaoFonte, PosicaoXadrez posicaoAlvo) {
+		Posicao fonte = posicaoFonte.toPosicao();
+		Posicao alvo = posicaoAlvo.toPosicao();
+		validaPosicaoFonte(fonte);
+		Peca capturaPeca = fazMovimento(fonte, alvo);
 		return (PecaXadrez)capturaPeca;
 	}
 	
