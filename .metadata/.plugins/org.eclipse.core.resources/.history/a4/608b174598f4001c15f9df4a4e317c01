@@ -28,7 +28,6 @@ public class Program {
 			PosicaoXadrez destino = Tela.lerPosicaoXadrez(sc);
 			
 			PecaXadrez capturaPeca = px.executaMovimento(origem, destino);
-			
 			}catch(XadrezException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();

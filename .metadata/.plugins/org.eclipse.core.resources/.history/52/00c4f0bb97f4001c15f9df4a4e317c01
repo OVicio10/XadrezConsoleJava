@@ -33,12 +33,6 @@ public class Tela {
 	public static final String ANSI_AMARELO_BACKGROUND = "\u001B[43m";	
 	public static final String ANSI_BRANCO_BACKGROUND = "\u001B[47m";
 	
-	// Limpar o console
-	public static void limpaTela() {
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
-	}
-	
 	public static PosicaoXadrez lerPosicaoXadrez(Scanner sc) {
 		try {
 			String s = sc.nextLine();

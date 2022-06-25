@@ -34,7 +34,7 @@ public class Tela {
 	public static final String ANSI_BRANCO_BACKGROUND = "\u001B[47m";
 	
 	// Limpar o console
-	public static void limpaTela() {
+	public static void clearScreen() {
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
 	}
