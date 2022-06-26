@@ -20,7 +20,6 @@ public class PartidaXadrez {
 	private Tabuleiro tab;
 	private boolean xeque;
 	private boolean xequeMate;
-	private PecaXadrez vulnerabilidadeEnPassant;
 
 	private List<Peca> pecasNoTabuleiro = new ArrayList<>();
 	private List<Peca> pecasCapturadas = new ArrayList<>();
@@ -46,10 +45,6 @@ public class PartidaXadrez {
 
 	public boolean getXequeMate() {
 		return xequeMate;
-	}
-	
-	public PecaXadrez getVulnerabilidadeEnPassant() {
-		return vulnerabilidadeEnPassant;
 	}
 
 	public PecaXadrez[][] getPecas() {
@@ -79,9 +74,6 @@ public class PartidaXadrez {
 			desfazMovimento(origem, destino, pecaCapturada);
 			throw new XadrezException("voce nao se colocar em xeque");
 		}
-		
-		PecaXadrez pecaMovida = (PecaXadrez)tab.peca(destino);
-
 
 		xeque = (testeXeque(oponente(jogadorAtual))) ? true : false;
 
@@ -90,15 +82,6 @@ public class PartidaXadrez {
 		} else {
 			proximoTurno();
 		}
-		
-		// #Movimento especial En Passant
-		if (pecaMovida instanceof Peao && (destino.getLinha() == origem.getLinha() - 2 || destino.getLinha() == origem.getLinha() + 2)) {
-			vulnerabilidadeEnPassant = pecaMovida;
-		}
-		else {
-			vulnerabilidadeEnPassant = null;
-		}
-		
 		return (PecaXadrez) pecaCapturada;
 	}
 
@@ -111,12 +94,12 @@ public class PartidaXadrez {
 	private Peca fazMovimento(Posicao origem, Posicao destino) {
 		PecaXadrez p = (PecaXadrez) tab.removePeca(origem);
 		p.aumentaContadorMovimento();
-		Peca pecaCapturada = tab.removePeca(destino);
+		Peca pecacapturada = tab.removePeca(destino);
 		tab.posicaoPeca(p, destino);
 
 		if (pecasCapturadas != null) {
-			pecasNoTabuleiro.remove(pecaCapturada);
-			pecasCapturadas.add(pecaCapturada);
+			pecasNoTabuleiro.remove(pecacapturada);
+			pecasCapturadas.add(pecacapturada);
 
 		}
 
@@ -137,24 +120,8 @@ public class PartidaXadrez {
 			tab.posicaoPeca(torre, destinoT);
 			torre.aumentaContadorMovimento();
 		}
-		
-		// #Movimento especial En Passant
-				if (p instanceof Peao) {
-					if (origem.getColuna() != destino.getColuna() && pecaCapturada == null) {
-						Posicao posicaoPeao;
-						if (p.getCor() == Cor.BRANCO) {
-							posicaoPeao = new Posicao(destino.getLinha() + 1, destino.getColuna());
-						}
-						else {
-							posicaoPeao = new Posicao(destino.getLinha() - 1, destino.getColuna());
-						}
-						pecaCapturada = tab.removePeca(posicaoPeao);
-						pecasCapturadas.add(pecaCapturada);
-						pecasNoTabuleiro.remove(pecaCapturada);
-					}
-				}
 
-		return pecaCapturada;
+		return pecacapturada;
 	}
 
 	private void desfazMovimento(Posicao origem, Posicao destino, Peca pecaCapturada) {
@@ -278,14 +245,14 @@ public class PartidaXadrez {
 		colocaNovaPeca('f', 1, new Bispo(tab, Cor.BRANCO));
 		colocaNovaPeca('g', 1, new Cavalo(tab, Cor.BRANCO));
 		colocaNovaPeca('h', 1, new Torre(tab, Cor.BRANCO));
-		colocaNovaPeca('a', 2, new Peao(tab, Cor.BRANCO, this));
-		colocaNovaPeca('b', 2, new Peao(tab, Cor.BRANCO, this));
-		colocaNovaPeca('c', 2, new Peao(tab, Cor.BRANCO, this));
-		colocaNovaPeca('d', 2, new Peao(tab, Cor.BRANCO, this));
-		colocaNovaPeca('e', 2, new Peao(tab, Cor.BRANCO, this));
-		colocaNovaPeca('f', 2, new Peao(tab, Cor.BRANCO, this));
-		colocaNovaPeca('g', 2, new Peao(tab, Cor.BRANCO, this));
-		colocaNovaPeca('h', 2, new Peao(tab, Cor.BRANCO, this));
+		colocaNovaPeca('a', 2, new Peao(tab, Cor.BRANCO));
+		colocaNovaPeca('b', 2, new Peao(tab, Cor.BRANCO));
+		colocaNovaPeca('c', 2, new Peao(tab, Cor.BRANCO));
+		colocaNovaPeca('d', 2, new Peao(tab, Cor.BRANCO));
+		colocaNovaPeca('e', 2, new Peao(tab, Cor.BRANCO));
+		colocaNovaPeca('f', 2, new Peao(tab, Cor.BRANCO));
+		colocaNovaPeca('g', 2, new Peao(tab, Cor.BRANCO));
+		colocaNovaPeca('h', 2, new Peao(tab, Cor.BRANCO));
 
 		colocaNovaPeca('a', 8, new Torre(tab, Cor.PRETO));
 		colocaNovaPeca('b', 8, new Cavalo(tab, Cor.PRETO));
@@ -295,14 +262,14 @@ public class PartidaXadrez {
 		colocaNovaPeca('f', 8, new Bispo(tab, Cor.PRETO));
 		colocaNovaPeca('g', 8, new Cavalo(tab, Cor.PRETO));
 		colocaNovaPeca('h', 8, new Torre(tab, Cor.PRETO));
-		colocaNovaPeca('a', 7, new Peao(tab, Cor.PRETO, this));
-		colocaNovaPeca('b', 7, new Peao(tab, Cor.PRETO, this));
-		colocaNovaPeca('c', 7, new Peao(tab, Cor.PRETO, this));
-		colocaNovaPeca('d', 7, new Peao(tab, Cor.PRETO, this));
-		colocaNovaPeca('e', 7, new Peao(tab, Cor.PRETO, this));
-		colocaNovaPeca('f', 7, new Peao(tab, Cor.PRETO, this));
-		colocaNovaPeca('g', 7, new Peao(tab, Cor.PRETO, this));
-		colocaNovaPeca('h', 7, new Peao(tab, Cor.PRETO, this));
+		colocaNovaPeca('a', 7, new Peao(tab, Cor.PRETO));
+		colocaNovaPeca('b', 7, new Peao(tab, Cor.PRETO));
+		colocaNovaPeca('c', 7, new Peao(tab, Cor.PRETO));
+		colocaNovaPeca('d', 7, new Peao(tab, Cor.PRETO));
+		colocaNovaPeca('e', 7, new Peao(tab, Cor.PRETO));
+		colocaNovaPeca('f', 7, new Peao(tab, Cor.PRETO));
+		colocaNovaPeca('g', 7, new Peao(tab, Cor.PRETO));
+		colocaNovaPeca('h', 7, new Peao(tab, Cor.PRETO));
 
 	}
 }

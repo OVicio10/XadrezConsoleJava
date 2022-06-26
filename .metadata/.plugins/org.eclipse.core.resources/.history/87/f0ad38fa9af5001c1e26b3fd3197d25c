@@ -77,11 +77,11 @@ public class Peao extends PecaXadrez {
 			// #Movimento especial En Passant branco
 			if (posicao.getLinha() == 3) {
 				Posicao esq = new Posicao(posicao.getLinha(), posicao.getColuna() - 1);
-				if (getTab().posicaoExiste(esq) && existePecaOponente(esq) && getTab().peca(esq) == px.getVulnerabilidadeEnPassant()) {
+				if (getTab().posicaoExiste(esq) && existePecaOponente(esq) && getTab().peca(esq) == px.getvulnerabilidadeEnPassant()) {
 				mat[esq.getLinha() - 1][esq.getColuna()] = true;
 				}
 			Posicao dir = new Posicao(posicao.getLinha(), posicao.getColuna() + 1);
-				if (getTab().posicaoExiste(dir) && existePecaOponente(dir) && getTab().peca(dir) == px.getVulnerabilidadeEnPassant()) {
+				if (getTab().posicaoExiste(dir) && existePecaOponente(dir) && getTab().peca(dir) == px.getvulnerabilidadeEnPassant()) {
 				mat[dir.getLinha() - 1][dir.getColuna()] = true;
 				}
 			}
