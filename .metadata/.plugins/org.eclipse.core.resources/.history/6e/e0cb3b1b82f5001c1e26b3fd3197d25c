@@ -7,11 +7,10 @@ import xadrez.PecaXadrez;
 
 public class Peao extends PecaXadrez {
 
-	
 	public Peao(Tabuleiro tab, Cor cor) {
 		super(tab, cor);
 	}
-
+	
 	@Override
 	public String toString() {
 		return "P";
@@ -36,12 +35,13 @@ public class Peao extends PecaXadrez {
 			p.setValor(posicao.getLinha() - 1, posicao.getColuna() - 1);
 			if (getTab().posicaoExiste(p) && existePecaOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-			}
+			}			
 			p.setValor(posicao.getLinha() - 1, posicao.getColuna() + 1);
 			if (getTab().posicaoExiste(p) && existePecaOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-			}
-		} else {
+			}			
+		}
+		else {
 			p.setValor(posicao.getLinha() + 1, posicao.getColuna());
 			if (getTab().posicaoExiste(p) && !getTab().existePeca(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
@@ -54,11 +54,11 @@ public class Peao extends PecaXadrez {
 			p.setValor(posicao.getLinha() + 1, posicao.getColuna() - 1);
 			if (getTab().posicaoExiste(p) && existePecaOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-			}
+			}			
 			p.setValor(posicao.getLinha() + 1, posicao.getColuna() + 1);
 			if (getTab().posicaoExiste(p) && existePecaOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
-			}
+			}	
 		}
 		return mat;
 	}

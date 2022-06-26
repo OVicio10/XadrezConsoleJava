@@ -2,4 +2,3 @@ INDEX VERSION 1.131+D:\JG WorkFile\UNIFEI\Projeto de Software\Trabalho\.metadata
 2367783050.index
 591744942.index
 1865797976.index
-1000312400.index

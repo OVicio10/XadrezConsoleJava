@@ -2,14 +2,15 @@ package xadrez.pecas;
 
 import tabuleiro.Tabuleiro;
 import tabuleiro.Posicao;
+import xadrez.PartidaXadrez;
 import xadrez.Cor;
 import xadrez.PecaXadrez;
 
 public class Peao extends PecaXadrez {
 
-	
-	public Peao(Tabuleiro tab, Cor cor) {
+	public Peao(Tabuleiro tab, Cor cor, PartidaXadrez px) {
 		super(tab, cor);
+		this.px = px;
 	}
 
 	@Override
@@ -30,7 +31,8 @@ public class Peao extends PecaXadrez {
 			}
 			p.setValor(posicao.getLinha() - 2, posicao.getColuna());
 			Posicao p2 = new Posicao(posicao.getLinha() - 1, posicao.getColuna());
-			if (getTab().posicaoExiste(p) && !getTab().existePeca(p) && getTab().posicaoExiste(p2) && !getTab().existePeca(p2) && getContadorMovimento() == 0) {
+			if (getTab().posicaoExiste(p) && !getTab().existePeca(p) && getTab().posicaoExiste(p2)
+					&& !getTab().existePeca(p2) && getContadorMovimento() == 0) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
 			p.setValor(posicao.getLinha() - 1, posicao.getColuna() - 1);
@@ -48,7 +50,8 @@ public class Peao extends PecaXadrez {
 			}
 			p.setValor(posicao.getLinha() + 2, posicao.getColuna());
 			Posicao p2 = new Posicao(posicao.getLinha() + 1, posicao.getColuna());
-			if (getTab().posicaoExiste(p) && !getTab().existePeca(p) && getTab().posicaoExiste(p2) && !getTab().existePeca(p2) && getContadorMovimento() == 0) {
+			if (getTab().posicaoExiste(p) && !getTab().existePeca(p) && getTab().posicaoExiste(p2)
+					&& !getTab().existePeca(p2) && getContadorMovimento() == 0) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
 			p.setValor(posicao.getLinha() + 1, posicao.getColuna() - 1);

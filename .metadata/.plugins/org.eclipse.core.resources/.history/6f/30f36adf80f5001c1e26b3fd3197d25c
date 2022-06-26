@@ -86,7 +86,7 @@ public class Rei extends PecaXadrez {
 
 		// #Movimento especial Roque
 		if (getContadorMovimento() == 0 && !partidaXadrez.getXeque()) {
-			// #Movimento especial Roque pequeno
+			// #Movimento especial Roque, Torre
 			Posicao posT1 = new Posicao(posicao.getLinha(), posicao.getColuna() + 3);
 			if (TesteRoque(posT1)) {
 				Posicao p1 = new Posicao(posicao.getLinha(), posicao.getColuna() + 1);
@@ -95,7 +95,7 @@ public class Rei extends PecaXadrez {
 					mat[posicao.getLinha()][posicao.getColuna() + 2] = true;
 				}
 			}
-			// #Movimento especial Roque grande
+			// #specialmove castling queenside rook
 			Posicao posT2 = new Posicao(posicao.getLinha(), posicao.getColuna() - 4);
 			if (TesteRoque(posT2)) {
 				Posicao p1 = new Posicao(posicao.getLinha(), posicao.getColuna() - 1);

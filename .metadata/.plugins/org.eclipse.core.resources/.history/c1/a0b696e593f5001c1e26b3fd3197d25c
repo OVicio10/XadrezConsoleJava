@@ -134,24 +134,6 @@ public class PartidaXadrez {
 			pecasCapturadas.remove(pecaCapturada);
 			pecasNoTabuleiro.add(pecaCapturada);
 		}
-
-		// #Movimento especial roque pequeno
-		if (p instanceof Rei && destino.getColuna() == origem.getColuna() + 2) {
-			Posicao origemT = new Posicao(origem.getLinha(), origem.getColuna() + 3);
-			Posicao destinoT = new Posicao(origem.getLinha(), origem.getColuna() + 1);
-			PecaXadrez torre = (PecaXadrez) tab.removePeca(origemT);
-			tab.posicaoPeca(torre, destinoT);
-			torre.aumentaContadorMovimento();
-		}
-
-		// #Movimento especial roque grande
-		if (p instanceof Rei && destino.getColuna() == origem.getColuna() - 2) {
-			Posicao origemT = new Posicao(origem.getLinha(), origem.getColuna() - 4);
-			Posicao destinoT = new Posicao(origem.getLinha(), origem.getColuna() - 1);
-			PecaXadrez torre = (PecaXadrez) tab.removePeca(origemT);
-			tab.posicaoPeca(torre, destinoT);
-			torre.aumentaContadorMovimento();
-		}
 	}
 
 	private void validaPosicaoOrigem(Posicao pos) {
