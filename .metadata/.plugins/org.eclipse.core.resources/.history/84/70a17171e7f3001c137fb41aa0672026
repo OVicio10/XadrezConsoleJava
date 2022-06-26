@@ -1,9 +1,0 @@
-package tabuleiro;
-
-public class TabuleiroException {
-
-	public TabuleiroException() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

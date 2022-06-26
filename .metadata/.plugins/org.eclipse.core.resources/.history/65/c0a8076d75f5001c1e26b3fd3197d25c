@@ -1,7 +1,0 @@
-package xadrez.pecas;
-
-import PecaXadrez;
-
-public class Peao extends PecaXadrez {
-
-}
