@@ -21,11 +21,11 @@ public abstract class PecaXadrez extends Peca{
 		return contadorMovimento;
 	}
 	
-	protected void aumentaContadorMovimento() {
+	public void aumentaContadorMovimento() {
 		contadorMovimento++;
 	}
 
-	protected void diminuiContadorMovimento() {
+	public void diminuiContadorMovimento() {
 		contadorMovimento--;
 	}
 	
