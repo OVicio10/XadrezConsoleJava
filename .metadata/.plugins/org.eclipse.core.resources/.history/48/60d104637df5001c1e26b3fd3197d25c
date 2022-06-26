@@ -1,0 +1,25 @@
+package xadrez.pecas;
+
+import tabuleiro.Tabuleiro;
+import xadrez.Cor;
+import xadrez.PecaXadrez;
+
+public class Rainha extends PecaXadrez {
+
+	public Rainha(Tabuleiro tab, Cor cor) {
+		super(tab, cor);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public String toString() {
+		return "Q";
+	}
+
+	@Override
+	public boolean[][] possiveisMovimentos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
